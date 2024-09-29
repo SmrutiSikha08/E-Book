@@ -1,0 +1,27 @@
+.bg-custom{
+	background-color: #ff80ab;
+}
+
+.navbar .nav-item:hover .nav-link {
+	background-color: white;
+	color: #ff80ab;
+	border-radius: 20px;
+}
+
+/* <!-- Custom Footer CSS --> */
+    footer a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    footer a:hover {
+        color: #fff;
+        text-decoration: underline;
+    }
+
+    @media (max-width: 576px) {
+        footer div {
+            display: block;
+            margin-top: 100px;
+        }
+    }
