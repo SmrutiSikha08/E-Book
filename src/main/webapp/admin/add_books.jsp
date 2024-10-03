@@ -82,6 +82,9 @@ label {
 }
 </style>
 	<%@include file="navbar.jsp"%>
+	<c:if test="${empty userobj}">
+	  <c:redirect url="../login.jsp" />
+	</c:if>
 	<div class="container p-5">
 		<div class="row justify-content-center">
 			<div class="col-md-6">
