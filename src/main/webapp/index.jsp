@@ -125,6 +125,11 @@
     
         
 </div>
+
+<div class= "text-center mt-1">
+<a href="all_recent_book.jsp" class="" style="text-decoration: none;"> <button type="button" style="font-weight: 700;
+    color: black;">See More</button></a>
+</div>
 	
 
 			<!--  End of Recent Book -->
@@ -168,8 +173,13 @@
 					<%
 					}
 					%>
+			
+			
 						
-					
+<div class= "text-center mt-1">
+<a href="all_new_book.jsp" class="" style="text-decoration: none;"> <button type="button" style="font-weight: 700;
+    color: black;">See More</button></a>
+</div>
 					
 						
 				
@@ -219,6 +229,10 @@
     <%
     }
     %>
+    <div class= "text-center mt-1">
+<a href="all_old_book.jsp" class="" style="text-decoration: none;"> <button type="button" style="font-weight: 700;
+    color: black;">See More</button></a>
+</div>
 
 
 
