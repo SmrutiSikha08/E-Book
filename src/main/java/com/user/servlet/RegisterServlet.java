@@ -9,8 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.apache.catalina.connector.Response;
-
 import com.DAO.UserDAOimpl;
 import com.DB.DBConnect;
 import com.entity.User;
