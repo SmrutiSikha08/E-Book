@@ -21,11 +21,11 @@
 		<!-- User-specific display -->
 		<div class="col-md-3 text-end d-flex justify-content-end align-items-center">
 			<c:if test="${not empty userobj}">
-				<a href="cart.jsp" class="me-3"><i class="fa-solid fa-cart-shopping"></i></a>
+				<a href="checkout.jsp" class="me-3"><i class="fa-solid fa-cart-shopping"></i></a>
 				<a href="login.jsp" class="btn btn-success me-2">
 					<i class="fa-solid fa-user-plus me-2"></i>${userobj.name}
 				</a>
-				<a href="#" class="btn btn-primary">
+				<a href="logout" class="btn btn-primary">
 					<i class="fa-solid fa-right-to-bracket me-2"></i>Logout
 				</a>
 			</c:if>
@@ -84,7 +84,7 @@
 			</ul>
 
 			<div class="d-flex">
-				<a href="#" class="btn btn-light my-2 my-sm-0 me-2">
+				<a href="setting.jsp" class="btn btn-light my-2 my-sm-0 me-2">
 					<i class="fa-solid fa-gear"></i> Setting
 				</a>
 				<a href="#" class="btn btn-light my-2 my-sm-0">

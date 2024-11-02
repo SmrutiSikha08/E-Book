@@ -8,6 +8,8 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@page isELIgnored="false"%>
+<%@ page import="java.util.List" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,7 +48,7 @@
 .p1 {
 	text-align: center;
 	font-weight: bold;
-	font-family: " sans-serif;
+	font-family: " sans-serif ;
 	color: Black;
 }
 
@@ -98,7 +100,8 @@
                     if(b.getBookCategory().equals("Old"))
                     {%>
                     <div class="row">
-                     Categories: <%= b.getBookCategory() %></p>
+                     Categories: <%= b.getBookCategory() %>
+                    </p>
                        
                         <a href="view_books.jsp?bid=<%=b.getBookId() %>" class="btn btn-danger btn-sm mb-1">View Details</a>
                         <a href="" class="btn btn-success btn-sm mb-1">M.R.P : ₹<%= b.getPrice() %></a>
