@@ -2,6 +2,8 @@
 	pageEncoding="UTF-8"%>
 	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 	<%@page isELIgnored="false" %>
+<%@ page import="java.util.List" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,6 +24,12 @@
 						<h5 class="text-center text-danger">${failedMsg}</h5>
 						<c:remove var="failedMsg" scope="session"/>
 						</c:if>
+						
+						<c:if test="${not empty failedMsg}">
+						<h5 class="text-center text-danger text-success">${succMsg}</h5>
+						<c:remove var="succMsg" scope="session"/>
+						</c:if>
+					
 					
 					
 						<form action="login" method="post">

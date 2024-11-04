@@ -1,3 +1,6 @@
+<%@page import="com.DB.DBConnect"%>
+<%@page import="com.DAO.BookDAOimpl"%>
+<%@page import="com.entity.BookDtls"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -82,74 +85,69 @@ label {
 }
 </style>
 	<%@include file="navbar.jsp"%>
-	<c:if test="${empty userobj}">
-	  <c:redirect url="../login.jsp" />
-	</c:if>
 	<div class="container p-5">
 		<div class="row justify-content-center">
 			<div class="col-md-6">
 				<div class="card">
 					<div class="card-body">
-						<h4 class="text-center">Add Books</h4>
-						
-						<c:if test="${not empty succMsg}">
-						<p class="text-center text-success">${succMsg}</p>
-						<c:remove var="succMsg" scope="session"/>
-						</c:if>
-						
-						<c:if test="${not empty failedMsg}">
-						<p class="text-center text-danger">${failedMsg}</p>
-						<c:remove var="failedMsg" scope="session"/>
-						</c:if>
+						<h4 class="text-center">Edit Books</h4>
 						
 						
-						<form action="../add_books" method="post"
-							enctype="multipart/form-data">
-
+						
+						<%
+						int id=Integer.parseInt(request.getParameter("id"));
+						BookDAOimpl dao = new BookDAOimpl(DBConnect.getConn());
+				        BookDtls b = dao.getBookById(id);
+						
+						%>
+						
+						
+						<form action="../editbooks" method="post">
+							<input type="hidden" name="id" value="<%=b.getBookId()%>">
 							<div class="form-group">
 								<label for="bookName" class="form-label">Book Name</label> <input
 									name="bname" type="text" class="form-control" id="bookName"
-									placeholder="Enter book name" required>
+									placeholder="Enter book name" required value="<%=b.getBookName() %>">
 							</div>
 
 							<div class="form-group">
 								<label for="authorName" class="form-label">Author Name</label> <input
 									name="author" type="text" class="form-control" id="authorName"
-									placeholder="Enter author name" required>
+									placeholder="Enter author name" required value="<%=b.getAuthor() %>">
 							</div>
 
 							<div class="form-group">
 								<label for="price" class="form-label">Price*</label> <input
 									name="price" type="number" class="form-control" id="price"
-									placeholder="Enter price" required>
+									placeholder="Enter price" required value="<%=b.getPrice() %>">
 							</div>
 
-							<div class="form-group">
-								<label for="bookCategory" class="form-label">Book
-									Categories</label> <select id="bookCategory" name="categories"
-									class="form-control" required>
-									<option selected disabled>--select--</option>
-									<option value="New">New Book</option>
-								</select>
-							</div>
+						
 
 							<div class="form-group">
 								<label for="bookStatus" class="form-label">Book Status</label> <select
 									id="bookStatus" name="status" class="form-control" required>
-									<option selected disabled>--select--</option>
+									<% 
+									if("Active".equals(b.getStatus())){
+									%>
 									<option value="Active">Active</option>
 									<option value="Inactive">Inactive</option>
+									
+										<%
+										} else{
+										%>
+										<option value="Inactive">Inactive</option>
+										<option value="Active">Active</option>
+										<%
+										}
+									%>
+									
 								</select>
 							</div>
 
-							<div class="form-group">
-								<label for="bookImage" class="form-label">Upload Photo</label> <input
-									name="bimg" type="file" class="form-control-file"
-									id="bookImage" required>
-								<!-- Displays default text when no file selected -->
-							</div>
+							
 
-							<button type="submit" class="btn btn-primary1">Add Book</button>
+							<button type="submit" class="btn btn-primary1">Update</button>
 						</form>
 					</div>
 				</div>

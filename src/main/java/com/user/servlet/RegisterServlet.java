@@ -9,8 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.apache.catalina.connector.Response;
-
 import com.DAO.UserDAOimpl;
 import com.DB.DBConnect;
 import com.entity.User;
@@ -43,7 +41,7 @@ public class RegisterServlet extends HttpServlet{
 				boolean f=dao.userRegister(us);
 				if (f) 
 				{
-//					System.out.println("User Registred Successfully");
+//					System.out.println("User Registered Successfully");
 					session.setAttribute("succMsg", "User Registred Successfully");
 					resp.sendRedirect("register.jsp");	
 				}else {
