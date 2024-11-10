@@ -50,7 +50,7 @@
 					<%
 					}
 					%>
-
+<%--i have changes and work on oldbook.jsp and remove book from cart--%>
 </div>
 </div>
 
