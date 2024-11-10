@@ -50,7 +50,7 @@ import java.util.List;
         Cart c = null;
           double totalPrice =0 ;
         try{
-          String sql = "SELECT * FROM cart WHERE uid = ?";
+          String sql = "select * from cart where uid = ?";
           PreparedStatement ps = conn.prepareStatement(sql);
           ps.setInt(1, userId);
 
@@ -87,13 +87,14 @@ import java.util.List;
     }
 
       @Override
-      public boolean deleteBook(int bid, int uid) {
+      public boolean deleteBook(int bid, int uid,int cid) {
           boolean f = false;
           try {
-              String sql = "DELETE FROM cart WHERE bid = ? and uid=?";
+              String sql = "delete from cart where bid = ? and uid=? and cid=?";
               PreparedStatement ps = conn.prepareStatement(sql);
               ps.setInt(1, bid);
               ps.setInt(2, uid);
+              ps.setInt(3,cid);
               int i = ps.executeUpdate();
 
               if (i == 1) {

@@ -1,5 +1,6 @@
 package com.DAO;
 
+import java.sql.Array;
 import java.util.List;
 
 import com.entity.BookDtls;
@@ -26,5 +27,8 @@ public interface BookDAO {
 	public List<BookDtls> getAllNewBook();
 	
 	public List<BookDtls> getAllOldBook();
-	
+
+	public List<BookDtls> getBookByOld(String email,String cate);
+
+	public boolean oldBookDelete(String email,String cate);
 }

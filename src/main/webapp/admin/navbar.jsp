@@ -95,7 +95,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
 	<div class="container-fluid">
-		<a class="navbar-brand" href="#"><i class="fa-solid fa-house"></i></a>
+		<a class="navbar-brand" href=""><i class="fa-solid fa-house"></i></a>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 			data-bs-target="#navbarSupportedContent"
 			aria-controls="navbarSupportedContent" aria-expanded="false"

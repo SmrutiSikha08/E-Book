@@ -10,9 +10,9 @@ public interface CartDAO {
 
 
      public boolean addCart(Cart c);
-     public List<Cart> getBookbyUser(int userId);
+     public List <Cart> getBookbyUser(int userId);
 
-     public boolean deleteBook(int bid,int uid);
+     public boolean deleteBook(int bid,int uid,int cid);
 
 
 }

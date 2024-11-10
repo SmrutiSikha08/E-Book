@@ -39,10 +39,8 @@
 								<p>Categories:<%=b.getBookCategory() %>
 								<p>
 								<div class="row">
-									<a href="" class="btn btn-success btn-sm mb-1"> <i
-										class="fa-solid fa-cart-shopping"></i> Add to Cart
-									</a> <a href="" class="btn btn-danger btn-sm mb-1">View Details</a>
-									<a href="" class="btn btn-success btn-sm mb-1"><%=b.getPrice() %>
+									 <a href="view_books.jsp?bid=<%=b.getBookId() %>" class="btn btn-danger btn-sm mb-1">View Details</a>
+									<a href="" class="btn btn-success btn-sm mb-3"><%=b.getPrice() %>
 									<i class="fa-solid fa-indian-rupee-sign"></i>
 									</a>
 								</div>

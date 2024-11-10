@@ -9,12 +9,14 @@
 <%@page isELIgnored="false" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<html>
 <head>
     <%@include file="all_component/allCSS.jsp"%>
     <title>Sell_Book</title>
 </head>
 <body style="background-color: #e3f2fd;">
+<c:if test="${empty userobj }">
+<c:redirect url="login.jsp"/>
+</c:if>
      <%@include file="all_component/navbar.jsp"%>
 
 
@@ -24,7 +26,20 @@
                <div class="card">
                    <div class="card-body">
                           <h5 class="text-center text-primary " > Sell Old Books</h5>
-                       <form action="" method="post" enctype="multipart/form-data">
+
+                       <c:if test="${not empty succMsg}">
+                           <p class="text-center text-success">${succMsg}</p>
+                           <c:remove var="succMsg" scope="session"/>
+                       </c:if>
+
+                       <c:if test="${not empty failedMsg}">
+                           <p class="text-center text-danger">${failedMsg}</p>
+                           <c:remove var="failedMsg" scope="session"/>
+                       </c:if>
+                       <form action="add_old_book" method="post"
+                             enctype="multipart/form-data">
+
+                           <input type="hidden" value="${userobj.email}" name="user">
 
                            <div class="form-group">
                                <label for="bookName" class="form-label">Book Name</label> <input

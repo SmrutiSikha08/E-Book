@@ -32,7 +32,7 @@
          <div class="alert alert-success" role="alert">
              ${succMsg}
          <c:remove var="succMsg" scope="session"/>
-         
+
          </div>
      </c:if>
 
@@ -76,7 +76,7 @@
                 <td><%= c.getAuhtor() %></td>
                 <td><%= c.getPrice() %></td>
                 <td>
-                    <a href="remove_book?bid=<%= c.getBid() %>&uid=<%= c.getUserId() %>" class="btn btn-sm btn-danger">Remove</a>
+                    <a href="remove_book?bid=<%= c.getBid() %>&uid=<%= c.getUserId() %>&&cid=<%=c.getCid()%>" class="btn btn-sm btn-danger">Remove</a>
 
                 </td>
             </tr>
