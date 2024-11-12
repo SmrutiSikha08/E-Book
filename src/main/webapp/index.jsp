@@ -28,7 +28,7 @@
 
 .back-img h1 {
 	font-weight: bold;
-	font-family: " sans-serif;
+	font-family:  sans-serif;
 	color: Black;
 	position: absolute;
 	top: 20%;
@@ -39,7 +39,7 @@
 
 .rbk h3 {
 	font-weight: bold;
-	font-family: " sans-serif;
+	font-family:  sans-serif;
 	color: Black;
 	margin-top: 40px;
 	text-align: center;
@@ -48,14 +48,14 @@
 .p1 {
 	text-align: center;
 	font-weight: bold;
-	font-family: " sans-serif ;
+	font-family:  sans-serif;
 	color: Black;
 }
 
 .p2 {
 	text-align: center;
 	font-weight: bold;
-	font-family: " sans-serif;
+	font-family:  sans-serif;
 	color: #d81b60;
 }
 

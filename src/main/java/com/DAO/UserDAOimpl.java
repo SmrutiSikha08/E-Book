@@ -6,32 +6,30 @@ import java.sql.ResultSet;
 
 import com.entity.User;
 
-public class UserDAOimpl implements UserDAO{
-	
+public class UserDAOimpl implements UserDAO {
+
 	private Connection conn;
 
 	public UserDAOimpl(Connection conn) {
-		super();
 		this.conn = conn;
 	}
 
 	@Override
 	public boolean userRegister(User us) {
-		boolean f=false;
+		boolean f = false;
 		try {
-			String sql="insert into user(name,email,phno,password) values(?,?,?,?)";
-			PreparedStatement ps=conn.prepareStatement(sql);
+			String sql = "insert into user(name, email, phno, password) values(?, ?, ?, ?)";
+			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, us.getName());
-			ps. setString(2, us.getEmail());
-			ps. setString(3, us.getPhno());
-			ps. setString(4, us.getPassword());
-			
-			int i=ps.executeUpdate();
-			if(i==1)
-			{
-				f=true;
+			ps.setString(2, us.getEmail());
+			ps.setString(3, us.getPhno());
+			ps.setString(4, us.getPassword());
+
+			int i = ps.executeUpdate();
+			if (i == 1) {
+				f = true;
 			}
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -40,17 +38,17 @@ public class UserDAOimpl implements UserDAO{
 
 	@Override
 	public User login(String email, String password) {
-	User us = null;	
-		
+		User us = null;
+
 		try {
-			String sql="select * from user where email=? and password=?";
-			PreparedStatement ps=conn.prepareStatement(sql);
+			String sql = "select * from user where email=? and password=?";
+			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, email);
 			ps.setString(2, password);
-			
-			ResultSet rs=ps.executeQuery();
-			while(rs.next()) {
-				us=new User();
+
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				us = new User();
 				us.setId(rs.getInt(1));
 				us.setName(rs.getString(2));
 				us.setEmail(rs.getString(3));
@@ -62,15 +60,54 @@ public class UserDAOimpl implements UserDAO{
 				us.setState(rs.getString(9));
 				us.setPincode(rs.getString(10));
 			}
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		return us;
-		
-	}
-	
-	
 
+		return us;
+	}
+
+	@Override
+	public boolean CheckPassword(int id, String ps) {
+		boolean f = false;
+		try {
+			String sql = "select * from user where id=? and password=?";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			pst.setInt(1, id);
+			pst.setString(2, ps);
+
+			ResultSet rs = pst.executeQuery();
+			if (rs.next()) {
+				f = true;
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return f;
+	}
+
+	@Override
+	public boolean updateProfile(User us) {
+		boolean f = false;
+		try {
+			String sql = "update user set name=?, email=?, phno=? where id=?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, us.getName());
+			ps.setString(2, us.getEmail());
+			ps.setString(3, us.getPhno());
+			ps.setInt(4, us.getId());
+
+			int i = ps.executeUpdate();
+			if (i == 1) {
+				f = true;
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return f;
+	}
 }

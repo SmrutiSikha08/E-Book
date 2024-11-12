@@ -22,23 +22,24 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="text-center text-primary"> Edit Profile </h5>
-                    <form action="" method="post">
+                    <form action="update_profile" method="post">
+                        <input type="hidden" value="${userobj.id}" name="id">
                         <!-- Full Name Input -->
                         <div class="mb-3">
                             <label for="fullName" class="form-label">Enter Full Name</label>
-                            <input type="text" class="form-control" id="fullName" required="required" name="fname">
+                            <input type="text" class="form-control" id="fullName" required="required" name="fname" value="${userobj.name}">
                         </div>
 
                         <!-- Email Address Input -->
                         <div class="mb-3">
                             <label for="email" class="form-label">Email Address</label> <input
-                                type="email" class="form-control" id="email" required="required" name="email">
+                                type="email" class="form-control" id="email" required="required" name="email" value="${userobj.email}">
                         </div>
 
                         <!-- Contact Number Input -->
                         <div class="mb-3">
                             <label for="contact" class="form-label">Contact Number</label> <input
-                                type="tel" class="form-control" id="contact" required="required" name="phno">
+                                type="tel" class="form-control" id="contact" required="required" name="phno" value="{userobj.phno">
                         </div>
 
                         <!-- Password Input -->
