@@ -21,6 +21,7 @@
 </style>
 <div class="container">
     <h3 class="text-center">Hello</h3>
+
     <div class="row p-5">
         <!-- Sell Old Book Section -->
         <div class="col-md-4">
@@ -35,20 +36,20 @@
                 </div>
             </a>
         </div>
-        <div class="row p-5">
-            <!-- Sell Old Book Section -->
-            <div class="col-md-4">
-                <a href="old_book.jsp">
-                    <div class="card">
-                        <div class="card-body text-center">
-                            <div class="text-primary">
-                                <i class="fa-solid fa-book fa-3x"></i>
-                            </div>
-                            <h3> Old Book</h3>
+
+        <!-- Old Book Section -->
+        <div class="col-md-4">
+            <a href="old_book.jsp">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <div class="text-primary">
+                            <i class="fa-solid fa-book fa-3x"></i>
                         </div>
+                        <h3>Old Book</h3>
                     </div>
-                </a>
-            </div>
+                </div>
+            </a>
+        </div>
 
         <!-- Login & Security Section -->
         <div class="col-md-4">
@@ -58,29 +59,16 @@
                         <div class="text-primary">
                             <i class="fa-regular fa-id-card fa-3x"></i>
                         </div>
-                        <h3>Login & Security (Edit Profile)</h3>
+                        <h3>Edit Profile</h3>
                     </div>
                 </div>
             </a>
         </div>
+    </div>
 
-        <!-- Your Address Section -->
-        <div class="col-md-4 mt-3">
-            <a href="user_address.jsp">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <div class="text-primary">
-                            <i class="fas fa-map-marker-alt fa-3x"></i>
-                        </div>
-                        <h3>Your Address</h3>
-                        <p>Edit Your Address</p>
-                    </div>
-                </div>
-            </a>
-        </div>
-
+    <div class="row p-5">
         <!-- My Orders Section -->
-        <div class="col-md-4 mt-3">
+        <div class="col-md-6 mt-3">
             <a href="order.jsp">
                 <div class="card">
                     <div class="card-body text-center">
@@ -95,7 +83,7 @@
         </div>
 
         <!-- Help Center Section -->
-        <div class="col-md-4 mt-3">
+        <div class="col-md-6 mt-3">
             <a href="helpline.jsp">
                 <div class="card">
                     <div class="card-body text-center">
@@ -110,6 +98,7 @@
         </div>
     </div>
 </div>
+
 </body>
 </html>
 <%@ include file="all_component/footer.jsp" %>
